@@ -1,0 +1,70 @@
+---
+title: Elements Check
+description: Let's see how elements look like.
+date: 1995-01-01
+---
+
+# h1
+
+## h2
+
+### h3
+
+paragraph
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+**bold**
+
+_italic_
+
+- ul1
+- ul2
+- ul3
+
+1. ol1
+2. ol2
+3. ol3
+
+[link](/)
+
+> blockquote
+
+---
+
+This is `inline code`.
+
+### Code Block
+
+```tsx:App.tsx {4,8,11-13} showLineNumbers
+import { ReactElement, ReactNode } from 'react'
+
+interface Props {
+  children: ReactNode
+}
+
+function App({
+  children
+}: Props): ReactElement {
+  return (
+    <div>
+      {children}
+    </div>
+  )
+}
+```
+
+```diff:diff
++ addition
+- deletion
+```
+
+### Video
+
+https://user-images.githubusercontent.com/1680273/138299599-88547edd-859c-44c9-8b52-2cc06f7f2dd3.mov
+
+### React component
+
+import { Button } from './Button'
+
+<Button>Click ME</Button>
