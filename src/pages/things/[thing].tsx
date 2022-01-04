@@ -9,10 +9,10 @@ import { ReactElement, useMemo } from "react";
 import { Frontmatter, Thing } from "../../@types/thing";
 import { Layout } from "../../components/Layout";
 import { Meta } from "../../components/Meta";
-import { replaceAll } from "../../libs/replaceAll";
 import { formatDate } from "../../libs/formatDate";
 import { getThingByName } from "../../libs/getThingByName";
 import { getThings } from "../../libs/getThings";
+import { replaceAll } from "../../libs/replaceAll";
 
 interface Props {
   frontMatter: Thing<string>["frontmatter"];
@@ -34,8 +34,8 @@ export default function Component({
         url={`${process.env.NEXT_PUBLIC_SITE_URL}/things/${
           replaceAll(
             frontMatter.title,
-            ' ',
-            '-'
+            " ",
+            "-",
           )
         }`}
       />
@@ -53,7 +53,7 @@ export async function getStaticPaths(): Promise<GetStaticPathsResult> {
   const things = await getThings("frontmatter");
   const paths = things.flatMap((thing) => {
     return {
-      params: { thing: replaceAll(thing.title, ' ', '-') },
+      params: { thing: replaceAll(thing.title, " ", "-") },
     };
   });
 
