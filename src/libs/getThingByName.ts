@@ -24,7 +24,7 @@ export async function getThingByName<K extends keyof ContentType>(
   const { code, frontmatter } = await bundleMDX({
     file,
     cwd,
-    xdmOptions: (options) => {
+    mdxOptions: (options) => {
       options.rehypePlugins = [
         ...(options?.rehypePlugins ?? []),
         rehypeSlug,
