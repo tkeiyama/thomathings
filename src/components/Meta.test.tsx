@@ -1,10 +1,11 @@
 import { render } from "@testing-library/react";
 import { config } from "dotenv";
 import { ReactElement } from "react";
+import { vi } from "vitest";
 
 import { Meta } from "./Meta";
 
-jest.mock("next/head", () => {
+vi.mock("next/head", () => {
   return {
     __esModule: true,
     default: ({ children }: { children: ReactElement[] }) => {
