@@ -4,6 +4,7 @@ export interface Thing<T extends string | Date = Date> {
 }
 
 export interface Frontmatter<T extends string | Date = Date> {
+  id: string
   title: string;
   description: string;
   date: T;

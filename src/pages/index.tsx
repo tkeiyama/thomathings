@@ -19,9 +19,9 @@ export default function Index({ things }: Props): ReactElement {
       <Meta />
 
       <ul className="p-0 m-0 list-none">
-        {things.flatMap(({ title, date, description }) => (
+        {things.flatMap(({ id, title, date, description }) => (
           <li key={title} className="mt-10 first:mt-0">
-            <Link href={`/things/${replaceAll(title, " ", "-")}`} className="block p-4 text-white rounded-lg border border-gray-800 shadow-2xl">
+            <Link href={`/things/${id}`} className="block p-4 text-white rounded-lg border border-gray-800 shadow-2xl">
                 <h2 className="p-0 m-0 font-title text-brand border-none">
                   {title}
                 </h2>

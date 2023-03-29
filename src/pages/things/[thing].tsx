@@ -53,7 +53,7 @@ export async function getStaticPaths(): Promise<GetStaticPathsResult> {
   const things = await getThings();
   const paths = things.flatMap(({frontmatter}) => {
     return {
-      params: { thing: replaceAll(frontmatter.title, " ", "-") },
+      params: { thing: frontmatter.id },
     };
   });
 

@@ -45,7 +45,10 @@ export async function getThingByName(
   });
 
   return {
-    frontmatter,
+    frontmatter: {
+      ...frontmatter,
+      id: thingName
+    },
     content: code,
   };
 }
