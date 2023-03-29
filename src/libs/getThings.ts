@@ -1,6 +1,6 @@
 import { readdir } from "fs/promises";
 
-import { Frontmatter, Thing } from "../@types/thing";
+import { Frontmatter, Thing } from "../types/thing";
 import { getThingByName } from "./getThingByName";
 
 interface Options {

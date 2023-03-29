@@ -2,12 +2,11 @@ import { GetStaticPropsResult } from "next";
 import Link from "next/link";
 import { ReactElement } from "react";
 
-import { Thing } from "../@types/thing";
 import { Layout } from "../components/Layout";
 import { Meta } from "../components/Meta";
 import { formatDate } from "../libs/formatDate";
 import { getThings } from "../libs/getThings";
-import { replaceAll } from "../libs/replaceAll";
+import { Thing } from "../types/thing";
 
 interface Props {
   things: Thing<string>["frontmatter"][];

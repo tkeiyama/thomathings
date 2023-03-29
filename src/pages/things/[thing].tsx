@@ -6,13 +6,13 @@ import {
 } from "next";
 import { ReactElement, useMemo } from "react";
 
-import { Frontmatter, Thing } from "../../@types/thing";
 import { Layout } from "../../components/Layout";
 import { Meta } from "../../components/Meta";
 import { formatDate } from "../../libs/formatDate";
 import { getThingByName } from "../../libs/getThingByName";
 import { getThings } from "../../libs/getThings";
 import { replaceAll } from "../../libs/replaceAll";
+import { Frontmatter, Thing } from "../../types/thing";
 
 interface Props {
   frontMatter: Thing<string>["frontmatter"];
@@ -51,7 +51,7 @@ export default function Component({
 
 export async function getStaticPaths(): Promise<GetStaticPathsResult> {
   const things = await getThings();
-  const paths = things.flatMap(({frontmatter}) => {
+  const paths = things.flatMap(({ frontmatter }) => {
     return {
       params: { thing: frontmatter.id },
     };

@@ -5,7 +5,7 @@ import rehypePrism from "rehype-prism-plus";
 import rehypeSlug from "rehype-slug";
 import rehypeVideo from "rehype-video";
 
-import { Frontmatter, Thing } from "../@types/thing";
+import { Frontmatter, Thing } from "../types/thing";
 
 /**
  * getThingByName gets a thing from the things directory by the given name.
@@ -47,7 +47,7 @@ export async function getThingByName(
   return {
     frontmatter: {
       ...frontmatter,
-      id: thingName
+      id: thingName,
     },
     content: code,
   };
