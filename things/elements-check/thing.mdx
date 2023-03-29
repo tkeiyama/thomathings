@@ -36,27 +36,23 @@ This is `inline code`.
 
 ### Code Block
 
-```tsx:App.tsx {4,8,11-13} showLineNumbers
-import { ReactElement, ReactNode } from 'react'
+```diff-tsx:App.tsx showLineNumbers
+  import { ReactElement, ReactNode } from 'react'
 
-interface Props {
-  children: ReactNode
-}
+- type Props = {}
++ interface Props {
++   children: ReactNode
++ }
 
-function App({
-  children
-}: Props): ReactElement {
-  return (
-    <div>
-      {children}
-    </div>
-  )
-}
-```
-
-```diff:diff
-+ addition
-- deletion
+  function App({
+    children
+  }: Props): ReactElement {
+    return (
+      <div>
+        {children}
+      </div>
+    )
+  }
 ```
 
 ### Video
@@ -65,6 +61,6 @@ https://user-images.githubusercontent.com/1680273/138299599-88547edd-859c-44c9-8
 
 ### React component
 
-import { Button } from './Button'
+import { Button } from "./Button";
 
 <Button>Click ME</Button>
