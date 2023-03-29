@@ -5,23 +5,21 @@ import rehypePrism from "rehype-prism-plus";
 import rehypeSlug from "rehype-slug";
 import rehypeVideo from "rehype-video";
 
-import { ContentType } from "../@types/thing";
+import { Frontmatter, Thing } from "../@types/thing";
 
 /**
  * getThingByName gets a thing from the things directory by the given name.
  *
  * @param thingName A thing name.
- * @param contentType The purpose of the reeturned value.
- * @returns The returned value is determined by contentType.
+ * @returns The MDX content and frontmatter which has title, description and date.
  */
-export async function getThingByName<K extends keyof ContentType>(
+export async function getThingByName(
   thingName: string,
-  contentType: K,
-): Promise<ContentType[K]> {
+): Promise<Thing> {
   const file = `${process.cwd()}/things/${thingName}/${thingName}.mdx`;
   const cwd = `${process.cwd()}/things/${thingName}`;
 
-  const { code, frontmatter } = await bundleMDX({
+  const { code, frontmatter } = await bundleMDX<Frontmatter>({
     file,
     cwd,
     mdxOptions: (options) => {
@@ -46,19 +44,8 @@ export async function getThingByName<K extends keyof ContentType>(
     },
   });
 
-  switch (contentType) {
-    case "frontmatter":
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      return frontmatter;
-    case "thing":
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      return {
-        frontmatter,
-        content: code,
-      };
-    default:
-      throw new Error("The content type is invalid.");
-  }
+  return {
+    frontmatter,
+    content: code,
+  };
 }

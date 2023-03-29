@@ -50,10 +50,10 @@ export default function Component({
 }
 
 export async function getStaticPaths(): Promise<GetStaticPathsResult> {
-  const things = await getThings("frontmatter");
-  const paths = things.flatMap((thing) => {
+  const things = await getThings();
+  const paths = things.flatMap(({frontmatter}) => {
     return {
-      params: { thing: replaceAll(thing.title, " ", "-") },
+      params: { thing: replaceAll(frontmatter.title, " ", "-") },
     };
   });
 
@@ -68,7 +68,6 @@ export async function getStaticProps({
 }: GetStaticPropsContext): Promise<GetStaticPropsResult<Props>> {
   const { frontmatter, content } = await getThingByName(
     params.thing as string,
-    "thing",
   );
   const formattedFrontMatter: Frontmatter<string> = {
     ...frontmatter,

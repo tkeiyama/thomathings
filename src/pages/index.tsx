@@ -36,11 +36,11 @@ export default function Index({ things }: Props): ReactElement {
 }
 
 export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {
-  const rawThings = await getThings("frontmatter");
-  const things = rawThings.flatMap((thing) => {
+  const rawThings = await getThings();
+  const things = rawThings.flatMap(({frontmatter}) => {
     return {
-      ...thing,
-      date: formatDate(thing.date),
+      ...frontmatter,
+      date: formatDate(frontmatter.date),
     };
   });
 

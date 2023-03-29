@@ -1,6 +1,6 @@
 import { readdir } from "fs/promises";
 
-import { ContentType, Frontmatter } from "../@types/thing";
+import { Frontmatter, Thing } from "../@types/thing";
 import { getThingByName } from "./getThingByName";
 
 interface Options {
@@ -22,20 +22,18 @@ const initialOptions: Options = {
 /**
  * getThings gets all things from the things directory.
  *
- * @param contentType The purpose of the reeturned value.
  * @param options To operate returned things.
- * @returns The returned value is determined by contentType and options.
+ * @returns The returned value is determined by options.
  */
-export async function getThings<K extends keyof ContentType>(
-  contentType: K,
+export async function getThings(
   options: Options = initialOptions,
-): Promise<ContentType[K][]> {
+): Promise<Thing[]> {
   const { sortBy, sortType } = options;
 
   const thingsName = await readdir(`${process.cwd()}/things`);
   const things = await Promise.all(
     thingsName.flatMap(async (thingName) => {
-      const thing = await getThingByName(thingName, contentType);
+      const thing = await getThingByName(thingName);
       return thing;
     }),
   );
