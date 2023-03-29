@@ -16,7 +16,7 @@ import { Frontmatter, Thing } from "../@types/thing";
 export async function getThingByName(
   thingName: string,
 ): Promise<Thing> {
-  const file = `${process.cwd()}/things/${thingName}/${thingName}.mdx`;
+  const file = `${process.cwd()}/things/${thingName}/thing.mdx`;
   const cwd = `${process.cwd()}/things/${thingName}`;
 
   const { code, frontmatter } = await bundleMDX<Frontmatter>({
