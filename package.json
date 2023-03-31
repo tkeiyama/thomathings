@@ -6,6 +6,8 @@
     "dev": "next dev",
     "start": "next start",
     "build": "next build",
+    "lint": "run-p lint:*",
+    "lint:eslint": "eslint . --max-warnings 0",
     "fmt": "run-p fmt:*",
     "fmt:eslint": "eslint . --fix",
     "fmt:prettier": "dprint fmt --verbose",
