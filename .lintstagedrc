@@ -3,5 +3,8 @@
     "vitest run --logHeapUsage",
     "eslint --fix",
     "dprint fmt --verbose"
+  ],
+  "*.{md,mdx}": [
+    "dprint fmt --verbose"
   ]
 }
