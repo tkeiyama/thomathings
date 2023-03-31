@@ -9,11 +9,11 @@
     "lint": "run-p lint:*",
     "lint:eslint": "eslint . --max-warnings 0",
     "lint:dprint": "dprint check --verbose",
+    "lint:typecheck": "tsc --noEmit --incremental false",
     "fix": "run-p fix:*",
     "fix:eslint": "eslint . --fix",
     "fix:dprint": "dprint fmt --verbose",
     "test": "vitest run --coverage",
-    "typecheck": "tsc --noEmit --incremental false",
     "lint-staged": "lint-staged -c .lintstagedrc",
     "prepare": "husky install"
   },

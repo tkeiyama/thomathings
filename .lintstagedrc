@@ -1,6 +1,7 @@
 {
   "*.{js,ts,jsx,tsx}": [
-    "eslint . --fix",
+    "vitest run --logHeapUsage",
+    "eslint --fix",
     "dprint fmt --verbose"
   ]
 }
