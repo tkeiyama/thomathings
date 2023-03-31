@@ -42,7 +42,7 @@
     "@vitest/coverage-c8": "^0.29.8",
     "autoprefixer": "10.4.0",
     "dotenv": "10.0.0",
-    "dprint": "0.19.2",
+    "dprint": "0.35.3",
     "esbuild": "0.14.8",
     "eslint": "8.37.0",
     "eslint-config-next": "^13.2.4",

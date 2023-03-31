@@ -73,8 +73,8 @@ devDependencies:
     specifier: 10.0.0
     version: 10.0.0
   dprint:
-    specifier: 0.19.2
-    version: 0.19.2
+    specifier: 0.35.3
+    version: 0.35.3
   esbuild:
     specifier: 0.14.8
     version: 0.14.8
@@ -2865,6 +2865,10 @@ packages:
       node-releases: 2.0.10
       update-browserslist-db: 1.0.10(browserslist@4.21.5)
 
+  /buffer-crc32@0.2.13:
+    resolution: {integrity: sha512-VO9Ht/+p3SN7SKWqcrgEzjGbRSJYTx+Q1pTQC0wrWqHx0vpJraQ6GtHx8tvcg1rlK1byhU5gccxgOgj7B0TDkQ==}
+    dev: true
+
   /buffer-from@1.1.2:
     resolution: {integrity: sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==}
     dev: false
@@ -3363,10 +3367,15 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /dprint@0.19.2:
-    resolution: {integrity: sha512-5eUI0rlFbOYTT2c7MxqKFP5sKjEK0CwDdkK8u9RGUEwwc2ttXjMb0pcuGJow6uXH9euRMDDCdJ0+CK1MPaaqOA==}
+  /dprint@0.35.3:
+    resolution: {integrity: sha512-BWFdr2Ury2dtqyjaTI9P5vCpb1yn5laLfO3Yo5egrrDlK2A2mv6CSpe/oK2cuOPESMY1JT2dubMv2dPDiJfMnA==}
     hasBin: true
     requiresBuild: true
+    dependencies:
+      https-proxy-agent: 5.0.1
+      yauzl: 2.10.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /eastasianwidth@0.2.0:
@@ -4141,6 +4150,12 @@ packages:
     resolution: {integrity: sha512-WtySTkS4OKev5JtpHXnib4Gxiurzh5NCGvWrFaZ34m6JehfTUhKZvn9njTfw48t6JumVQOmrKqpmGcdwxnhqBQ==}
     dependencies:
       format: 0.2.2
+    dev: true
+
+  /fd-slicer@1.1.0:
+    resolution: {integrity: sha512-cE1qsB/VwyQozZ+q1dGxR8LBYNZeofhEdUNGSMbQD3Gw2lAzX9Zb3uIU6Ebc/Fmyjo9AWWfnn0AUCHqtevs/8g==}
+    dependencies:
+      pend: 1.2.0
     dev: true
 
   /fetch-blob@3.2.0:
@@ -6268,6 +6283,10 @@ packages:
     resolution: {integrity: sha512-Dp6zGqpTdETdR63lehJYPeIOqpiNBNtc7BpWSLrOje7UaIsE5aY92r/AunQA7rsXvet3lrJ3JnZX29UPTKXyKQ==}
     dev: true
 
+  /pend@1.2.0:
+    resolution: {integrity: sha512-F3asv42UuXchdzt+xXqfW1OGlVBe+mxa2mqI0pg5yAHZPvFmY3Y6drSf/GQ1A86WgWEN9Kzh/WrgKa6iGcHXLg==}
+    dev: true
+
   /periscopic@3.1.0:
     resolution: {integrity: sha512-vKiQ8RRtkl9P+r/+oefh25C3fhybptkHKCZSPlcXiJux2tJF55GnEj3BVn4A5gKfq9NWWXXrxkHBwVPUfH0opw==}
     dependencies:
@@ -8279,6 +8298,13 @@ packages:
       string-width: 4.2.3
       y18n: 5.0.8
       yargs-parser: 20.2.9
+    dev: true
+
+  /yauzl@2.10.0:
+    resolution: {integrity: sha512-p4a9I6X6nu6IhoGmBqAcbJy1mlC4j27vEPZX9F4L4/vZT3Lyq1VkFHw/V/PUcB9Buo+DG3iHkT0x3Qya58zc3g==}
+    dependencies:
+      buffer-crc32: 0.2.13
+      fd-slicer: 1.1.0
     dev: true
 
   /yocto-queue@0.1.0:
