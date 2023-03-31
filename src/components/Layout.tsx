@@ -7,10 +7,10 @@ interface Props {
 
 export function Layout({ children }: Props): ReactElement {
   return (
-    <div className="py-8 px-6 mx-auto md:max-w-2xl">
+    <div className="mx-auto px-6 py-8 md:max-w-2xl">
       <header>
         <Link href="/">
-          <h2 className="inline-block py-0 my-0 font-title text-white border-none">
+          <h2 className="my-0 inline-block border-none py-0 font-title text-white">
             Thomathings
           </h2>
         </Link>

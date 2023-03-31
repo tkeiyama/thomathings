@@ -17,15 +17,15 @@ export default function Index({ things }: Props): ReactElement {
     <Layout>
       <Meta />
 
-      <ul className="p-0 m-0 list-none">
+      <ul className="m-0 list-none p-0">
         {things.flatMap(({ id, title, date, description }) => (
           <li key={title} className="mt-10 first:mt-0">
             <Link
               href={`/things/${id}`}
-              className="block p-4 text-white rounded-lg border border-gray-800 shadow-2xl"
+              className="block rounded-lg border border-gray-800 p-4 text-white shadow-2xl"
             >
               <small>{date}</small>
-              <h2 className="p-0 m-0 mt-1 font-title text-brand border-none">
+              <h2 className="m-0 mt-1 border-none p-0 font-title text-brand">
                 {title}
               </h2>
               <p className="m-0 mt-1">{description}</p>

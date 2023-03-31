@@ -40,7 +40,7 @@ export default function Component({
         }`}
       />
 
-      <h1 className="p-0 font-title border-none">{frontMatter.title}</h1>
+      <h1 className="border-none p-0 font-title">{frontMatter.title}</h1>
       <p>{frontMatter.date}</p>
       <article className="pt-8">
         <Content />
