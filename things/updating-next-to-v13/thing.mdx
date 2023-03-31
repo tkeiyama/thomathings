@@ -57,7 +57,7 @@ If you use v12 of `eslint-config-next`, ESLint shows you the above warning unles
 > Error: Package subpath './jsx-runtime.js' is not defined by "exports" in /path/to/repo/node_modules/react/package.json
 
 When I updated `next` to v13 and executed `next dev`, dynamic pages show the above error.
-I guessed this error is from `esbuild` because I often saw the file `jsx-runtime.js` in projects using `esbuild` as the build output. `mdx-bundler` is only the package using `esbuild` in this blog. So I just updated it to latest, then it fixed the error.
+I guessed this error is from `esbuild` because I often saw the `jsx-runtime.js` file in other projects using `esbuild` as the build output. `mdx-bundler` is only the package using `esbuild` in this blog. So I just updated it to latest, then it fixed the error.
 
 I think `mdx-bundler` fixed this at [v8.1.0](https://github.com/kentcdodds/mdx-bundler/releases/tag/v8.1.0) which supports react v18.
 
@@ -77,5 +77,5 @@ If I find a good solution for the MDX content, I'll make this blog move to `appD
 
 I've heard Astro is way too good for a static site. It often is compared to Next.js because they have similar features.  
 The reason I stick with Next.js is the user experience of the page navigation.  
-When a page moves to another page, users need to wait for the moment. Because of prerendering, Next.js doesn't make it happen.  
+When a page moves to another page, users need to wait for the moment. But Next.js using prerendering doesn't make it happen.  
 So I didn't move to Astro this time.
