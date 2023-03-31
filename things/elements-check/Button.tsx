@@ -10,7 +10,7 @@ export function Button({ children }: ButtonProps) {
 
   return (
     <button
-      className={clsx("py-2 px-4 rounded-xl", [
+      className={clsx("rounded-xl px-4 py-2", [
         isClicked ? "bg-green-500" : "bg-blue-500",
       ])}
       onClick={() => setIsClicked((props) => !props)}
