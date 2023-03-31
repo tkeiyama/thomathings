@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Setup
-        uses: ./.github/actions/setup/action.yml
+        uses: ./.github/actions/setup
 
       - name: lint files
         run: pnpm lint
