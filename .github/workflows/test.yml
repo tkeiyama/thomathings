@@ -8,7 +8,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    environment: CI
 
     steps:
       - name: Checkout
@@ -42,8 +41,8 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Test files
-        env:
-          NEXT_PUBLIC_SITE_IMAGE: ${{ env.NEXT_PUBLIC_SITE_IMAGE }}
-          NEXT_PUBLIC_SITE_NAME: ${{ env.NEXT_PUBLIC_SITE_NAME }}
-          NEXT_PUBLIC_SITE_URL: ${{ env.NEXT_PUBLIC_SITE_URL }}
         run: pnpm test
+        env:
+          NEXT_PUBLIC_SITE_IMAGE: ${{ vars.NEXT_PUBLIC_SITE_IMAGE }}
+          NEXT_PUBLIC_SITE_NAME: ${{ vars.NEXT_PUBLIC_SITE_NAME }}
+          NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL }}
