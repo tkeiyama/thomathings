@@ -19,7 +19,7 @@ describe("Meta", () => {
     config();
   });
 
-  it("Sets the default title/description correctly", async () => {
+  it.concurrent("Sets the default title/description correctly", async () => {
     render(<Meta />, {
       container: document.head,
     });
@@ -32,7 +32,7 @@ describe("Meta", () => {
     ).toBe("Personal things by Thomas.");
   });
 
-  it("Sets the given title/description", () => {
+  it.concurrent("Sets the given title/description", () => {
     render(
       <Meta title="sample" description="This is a sample site for testing" />,
       {
@@ -48,7 +48,7 @@ describe("Meta", () => {
     ).toBe("This is a sample site for testing");
   });
 
-  it("Sets properties for OGP", async () => {
+  it.concurrent("Sets properties for OGP", async () => {
     render(<Meta />, {
       container: document.head,
     });
@@ -80,7 +80,7 @@ describe("Meta", () => {
     ).toBe("https://i.imgur.com/Welh3vK.jpg");
   });
 
-  it("Sets the given type/url for OGP", () => {
+  it.concurrent("Sets the given type/url for OGP", () => {
     render(<Meta type="article" url="www.sample.com" />, {
       container: document.head,
     });
@@ -97,7 +97,7 @@ describe("Meta", () => {
     ).toBe("www.sample.com");
   });
 
-  it("Sets names for a Twitter card", () => {
+  it.concurrent("Sets names for a Twitter card", () => {
     render(<Meta />, {
       container: document.head,
     });

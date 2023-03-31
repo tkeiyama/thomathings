@@ -6,7 +6,7 @@ const APPLE_TOUCH_ICON_SIZES = [120, 180];
 const ICON_SIZES = [72, 96, 128, 144, 152, 192, 384, 512];
 
 describe("Pwa", () => {
-  it("Has basic meta data for PWA", () => {
+  it.concurrent("Has basic meta data for PWA", () => {
     render(<Pwa />);
 
     expect(
@@ -21,7 +21,7 @@ describe("Pwa", () => {
     ).toBe("#171a1c");
   });
 
-  it("Has apple-touch icons", () => {
+  it.concurrent("Has apple-touch icons", () => {
     render(<Pwa />);
     APPLE_TOUCH_ICON_SIZES.map((size) => {
       const nodeAttr = document.querySelector(
@@ -36,7 +36,7 @@ describe("Pwa", () => {
     });
   });
 
-  it("Has icons", () => {
+  it.concurrent("Has icons", () => {
     render(<Pwa />);
     ICON_SIZES.map((size) => {
       const nodeAttr = document.querySelector(

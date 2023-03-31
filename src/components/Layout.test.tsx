@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import { Layout } from "./Layout";
 
 describe("Layout", () => {
-  it("Should be rendered", () => {
+  it.concurrent("Should be rendered", () => {
     render(
       <Layout>
         <div>hello</div>
@@ -16,7 +16,7 @@ describe("Layout", () => {
     expect(text).toBeInTheDocument();
   });
 
-  it("Works with a link", () => {
+  it.concurrent("Works with a link", () => {
     render(
       <Layout>
         <div>hello</div>
