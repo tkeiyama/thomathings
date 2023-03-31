@@ -4,9 +4,6 @@ description: Set up for Node.js, pnpm and caches.
 runs:
   using: 'composite'
   steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-
     - name: Install Node.js
       uses: actions/setup-node@v3
       with:
