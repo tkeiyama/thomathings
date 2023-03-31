@@ -40,9 +40,9 @@ export async function getThings(
 
   const sortedThings = things.sort((a, b) => {
     if (sortType === "asc") {
-      return a[sortBy] < b[sortBy] ? -1 : 1;
+      return a["frontmatter"][sortBy] < b["frontmatter"][sortBy] ? -1 : 1;
     } else {
-      return a[sortBy] < b[sortBy] ? 1 : -1;
+      return a["frontmatter"][sortBy] < b["frontmatter"][sortBy] ? 1 : -1;
     }
   });
 
