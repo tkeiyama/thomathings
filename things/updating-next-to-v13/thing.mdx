@@ -6,9 +6,16 @@ date: 2023-03-29
 
 ## Introduction
 
-This blog has been using Next.js v12 for a while. Since its v13 of the `page` directory has been stable in production, I decided to update.  
+This blog has been using Next.js v12 for a while. Since its v13 with the `page` directory [has been stable](https://nextjs.org/blog/next-13), I decided to update.  
 Not only I updated Next.js to v13, but I also fixed errors from other libraries.
-This is why I want to take a note about that.
+This is why I want to take a note.
+
+## Target audience
+
+A user:
+
+- Wants to update Next.js from v12 to v13
+- Uses `mdx-bundler` to compile MDX files
 
 ## Pull Request
 
@@ -44,9 +51,9 @@ eslint-config-next
 
 ## What I did
 
-### Remove anchor element which a child of the Link component
+### Remove an anchor element within the Link component
 
-Since Next.js v13 changes the APIs of the Link component, the Link no longer needs an anchor element for a child.
+Since Next.js v13 changes the APIs of the Link component, the Link no longer needs an anchor element as a child.
 
 > Warning: passHref is missing. See: https://nextjs.org/docs/messages/link-passhref @next/next/link-passhref
 
@@ -56,8 +63,8 @@ If you use v12 of `eslint-config-next`, ESLint shows you the above warning unles
 
 > Error: Package subpath './jsx-runtime.js' is not defined by "exports" in /path/to/repo/node_modules/react/package.json
 
-When I updated `next` to v13 and executed `next dev`, dynamic pages show the above error.
-I guessed this error is from `esbuild` because I often saw the `jsx-runtime.js` file in other projects using `esbuild` as the build output. `mdx-bundler` is only the package using `esbuild` in this blog. So I just updated it to latest, then it fixed the error.
+When I updated `next` to v13 and executed `next dev`, dynamic page showed the above error.
+I guessed this error is from `esbuild` because I often saw `esbuild` creates the `jsx-runtime.js` file as the build output. In this blog, `mdx-bundler` is only the package using `esbuild`. So I just updated it to latest, then it fixed the error.
 
 I think `mdx-bundler` fixed this at [v8.1.0](https://github.com/kentcdodds/mdx-bundler/releases/tag/v8.1.0) which supports react v18.
 
@@ -65,7 +72,7 @@ I think `mdx-bundler` fixed this at [v8.1.0](https://github.com/kentcdodds/mdx-b
 
 ### Why not [appDir](https://beta.nextjs.org/docs/getting-started)?
 
-Although I love using the `appDir` approach, the reason I didn't use in this blog is that I couldn't find a way I make MDX using react hooks shown on the client side.
+Although I love using the `appDir` approach, the reason I didn't use in this blog is that I couldn't find a way this blog shows MDX which uses react hooks.
 I think I could do it with a combo of `useEffect` and `useState`, but it seems its implementation makes UX worse.
 
 I also tried an approach that I pass the MDX content, which is serialized from a library such as `next-mdx-remote`, from the server component to the client component.
@@ -75,7 +82,7 @@ If I find a good solution for the MDX content, I'll make this blog move to `appD
 
 ### Why not [Astro](https://astro.build/)?
 
-I've heard Astro is way too good for a static site. It often is compared to Next.js because they have similar features.  
+I've heard Astro is pretty good for a static site. It often is compared to Next.js because they have similar features.  
 The reason I stick with Next.js is the user experience of the page navigation.  
 In Astro, When a page moves to another page, users need to wait for the moment. But in Next.js using prerendering, it doesn't happen.  
 So I didn't move to Astro this time.
