@@ -4,7 +4,7 @@
     "eslint --fix",
     "dprint fmt --verbose"
   ],
-  "*.{md,mdx}": [
+  "*.md": [
     "dprint fmt --verbose"
   ]
 }
