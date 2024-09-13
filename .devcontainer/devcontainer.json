@@ -1,0 +1,12 @@
+{
+	"name": "thomathings",
+	"dockerComposeFile": "./compose.yml",
+	"service": "app",
+	"shutdownAction": "stopCompose",
+	"workspaceFolder": "/workspace",
+	"customizations": {
+		"vscode": {
+			"extensions": ["bradlc.vscode-tailwindcss", "biomejs.biome"]
+		}
+	}
+}

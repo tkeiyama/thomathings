@@ -2,4 +2,4 @@
 
 My personal things.
 
-To run locally, `pnpm`, then `pnpm dev`, then open [http://localhost:3000/](http://localhost:3000/).
+To run locally, `bun i`, then `bun dev`, then open [http://localhost:3000/](http://localhost:3000/).
