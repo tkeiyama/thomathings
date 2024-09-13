@@ -20,8 +20,6 @@ export const links: LinksFunction = () => [
 	},
 ];
 
-
-
 export default function Root() {
 	return (
 		<html lang="en">
