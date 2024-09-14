@@ -74,8 +74,8 @@ devDependencies:
     specifier: 10.4.14
     version: 10.4.14(postcss@8.4.21)
   dotenv:
-    specifier: 10.0.0
-    version: 10.0.0
+    specifier: 16.4.5
+    version: 16.4.5
   dprint:
     specifier: 0.35.3
     version: 0.35.3
@@ -3305,9 +3305,9 @@ packages:
       webidl-conversions: 7.0.0
     dev: true
 
-  /dotenv@10.0.0:
-    resolution: {integrity: sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==}
-    engines: {node: '>=10'}
+  /dotenv@16.4.5:
+    resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==}
+    engines: {node: '>=12'}
     dev: true
 
   /dprint@0.35.3:
