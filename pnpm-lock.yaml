@@ -36,8 +36,8 @@ dependencies:
     specifier: 5.0.0
     version: 5.0.0
   rehype-video:
-    specifier: 1.1.1
-    version: 1.1.1
+    specifier: 1.2.2
+    version: 1.2.2
   typescript:
     specifier: 5.6.2
     version: 5.6.2
@@ -2472,6 +2472,7 @@ packages:
 
   /acorn-import-assertions@1.8.0(acorn@8.8.2):
     resolution: {integrity: sha512-m7VZ3jwz4eK6A4Vtt8Ew1/mNbP24u0FhdyfA7fSvnJR6LMdfOYnmuIrrJAgrYfYJ10F/otaHTtrtrtmHdMNzEw==}
+    deprecated: package has been renamed to acorn-import-attributes
     peerDependencies:
       acorn: ^8
     dependencies:
@@ -6481,12 +6482,12 @@ packages:
       unist-util-visit: 4.1.2
     dev: false
 
-  /rehype-video@1.1.1:
-    resolution: {integrity: sha512-BMuwZcVHPv2AznaTmVwewRInIl9uI7Qxgyn1pgoV9178UVHLNBN86QICOBH4HFLkKCRimIE5KyLbrQG0r/dGKQ==}
+  /rehype-video@1.2.2:
+    resolution: {integrity: sha512-p18JzIZiFSUqk21RHeJTU/7/7n9Moy0aQzFzbujVWb4vPrRZHQAN0ZfzTV8J32yDsZE5d6JDGWOzmMdvJrHq0w==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dependencies:
-      unified: 10.1.0
-      unist-util-visit: 4.1.0
+      unified: 10.1.2
+      unist-util-visit: 4.1.2
     dev: false
 
   /remark-frontmatter@4.0.1:
@@ -7406,18 +7407,6 @@ packages:
     engines: {node: '>=4'}
     dev: false
 
-  /unified@10.1.0:
-    resolution: {integrity: sha512-4U3ru/BRXYYhKbwXV6lU6bufLikoAavTwev89H5UxY8enDFaAT2VXmIXYNm6hb5oHPng/EXr77PVyDFcptbk5g==}
-    dependencies:
-      '@types/unist': 2.0.6
-      bail: 2.0.2
-      extend: 3.0.2
-      is-buffer: 2.0.5
-      is-plain-obj: 4.1.0
-      trough: 2.1.0
-      vfile: 5.3.7
-    dev: false
-
   /unified@10.1.2:
     resolution: {integrity: sha512-pUSWAi/RAnVy1Pif2kAoeWNBa3JVrx0MId2LASj8G+7AiHWoKZNTomq6LG326T68U7/e263X6fTdcXIy7XnF7Q==}
     dependencies:
@@ -7496,14 +7485,6 @@ packages:
       '@types/unist': 2.0.6
       unist-util-is: 5.2.1
       unist-util-visit-parents: 4.1.1
-    dev: false
-
-  /unist-util-visit@4.1.0:
-    resolution: {integrity: sha512-n7lyhFKJfVZ9MnKtqbsqkQEk5P1KShj0+//V7mAcoI6bpbUjh3C/OG8HVD+pBihfh6Ovl01m8dkcv9HNqYajmQ==}
-    dependencies:
-      '@types/unist': 2.0.6
-      unist-util-is: 5.2.1
-      unist-util-visit-parents: 5.1.3
     dev: false
 
   /unist-util-visit@4.1.2:
